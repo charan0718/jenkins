@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Start') {
+            steps {
+                echo 'Jenkins Pipeline Started'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Build Started'
+                echo 'Build Completed'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing Started'
+                echo 'Testing Completed'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deployment Started'
+                echo 'Deployment Completed'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline Successfully Completed'
+        }
+
+        failure {
+            echo 'Pipeline Failed'
+        }
+    }
+}
